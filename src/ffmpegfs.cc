@@ -455,6 +455,7 @@ static const AUDIOCODEC_MAP audiocodec_map =
     { "AAC",            AV_CODEC_ID_AAC },          // TS, MP4, MOV, MKV
     { "AC3",            AV_CODEC_ID_AC3 },          // MP4, MOV, MKV
     { "MP3",            AV_CODEC_ID_MP3 },          // TS, MP4, MOV, MKV
+    { "M4A",            AV_CODEC_ID_AAC },          // TS, MP4, MOV, MKV
     { "OPUS",           AV_CODEC_ID_OPUS },         // webm
 
     { "VORBIS",         AV_CODEC_ID_VORBIS },       /** @todo webm: sound skips */

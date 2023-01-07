@@ -6005,6 +6005,7 @@ bool FFmpeg_Transcoder::total_overhead(size_t *filesize, FILETYPE filetype)
     case FILETYPE_OPUS:
     case FILETYPE_ALAC:
     case FILETYPE_FLAC:
+    case FILETYPE_M4A:
     {
         break;
     }

@@ -174,6 +174,7 @@ typedef enum FILETYPE
     FILETYPE_HLS,
     FILETYPE_FLAC,
     FILETYPE_MKV,
+    FILETYPE_M4A,
 } FILETYPE;
 
 /**

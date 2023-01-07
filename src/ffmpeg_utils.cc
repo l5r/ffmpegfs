@@ -118,6 +118,7 @@ static const FILETYPE_MAP filetype_map =
     { "hls",    FILETYPE_HLS },
     { "flac",   FILETYPE_FLAC },
     { "mkv",    FILETYPE_MKV },
+    { "m4a",    FILETYPE_M4A },
 };
 
 Format_Options::Format_Options()
@@ -389,6 +390,28 @@ const FFmpegfs_Format::OPTIONS_MAP FFmpegfs_Format::m_options_map =
         }
     },
     // -----------------------------------------------------------------------------------------------------------------------
+    // M4A
+    // -----------------------------------------------------------------------------------------------------------------------
+    {
+        FILETYPE_M4A,
+        {
+            "m4a",
+            "m4a",
+            {
+                {
+                    SAMPLE_FMT_DONTCARE,
+                    {
+                        { AV_CODEC_ID_NONE },
+                        { AV_CODEC_ID_AAC, AV_CODEC_ID_ALAC },
+                        { AV_CODEC_ID_NONE },
+                        AV_SAMPLE_FMT_NONE,
+                    }
+                }
+            },
+            true
+        }
+    },
+    // -----------------------------------------------------------------------------------------------------------------------
     // WAV
     // -----------------------------------------------------------------------------------------------------------------------
     {
@@ -649,8 +672,8 @@ const FFmpegfs_Format::OPTIONS_MAP FFmpegfs_Format::m_options_map =
     {
         FILETYPE_ALAC,
         {
-            "m4a",
-            "m4a",
+            "alac",
+            "alac",
             {
                 {
                     SAMPLE_FMT_DONTCARE,
@@ -1431,7 +1454,7 @@ void tempdir(std::string & path)
 int supports_albumart(FILETYPE filetype)
 {
     // Could also allow OGG but the format requires special handling for album arts
-    return (filetype == FILETYPE_MP3 || filetype == FILETYPE_MP4);
+    return (filetype == FILETYPE_MP3 || filetype == FILETYPE_MP4 || filetype == FILETYPE_M4A);
 }
 
 FILETYPE get_filetype(const std::string & desttype)
